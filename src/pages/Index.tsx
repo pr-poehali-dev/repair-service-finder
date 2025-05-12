@@ -5,6 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 // Обновленные категории услуг
 const serviceCategories = [
@@ -183,6 +184,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [ratingFilter, setRatingFilter] = useState("all");
+  const { toast } = useToast();
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
